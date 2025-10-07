@@ -66,6 +66,12 @@ if (cluster.isPrimary) {
       callback();
     });
 
+    socket.on('webAddPlayer', () => {
+      // Send message that Unity will listen to
+      console.log('submission');
+      io.emit('serverAddPlayer');
+    });
+
     if (!socket.recovered) {
       try {
         await db.each('SELECT id, content FROM messages WHERE id > ?',
