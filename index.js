@@ -66,7 +66,7 @@ if (cluster.isPrimary) {
       callback();
     });
 
-    socket.on('webAddPlayer', () => {
+    socket.on('webAddPlayer', (data) => {
       // Send message that Unity will listen to
       console.log('submission');
       io.emit('serverAddPlayer');
