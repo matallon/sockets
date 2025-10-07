@@ -91,9 +91,4 @@ if (cluster.isPrimary) {
   server.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
   });
-
-  function totalCount() {
-    return io.engine.clientsCount;
-  }
-  const count = totalCount();
 }
