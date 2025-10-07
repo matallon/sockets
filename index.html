@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Socket.IO chat</title>
+  <title>The Garden</title>
   <style>
       body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -20,6 +20,7 @@
 </head>
 <body>
   <ul id="messages"></ul>
+  <button type="button" onclick="buttonClicked();">spawn</button>
   <form id="form" action="">
     <input id="input" autocomplete="off" /><button>Send</button>
   </form>
@@ -48,9 +49,6 @@
       }
     });
 
-
-
-
     socket.on('chat message', (msg, serverOffset) => {
       const item = document.createElement('li');
       item.textContent = msg;
@@ -59,7 +57,11 @@
       socket.auth.serverOffset = serverOffset;
     });
 
-   
+    function buttonClicked(){
+      alert('Hello world!');
+      socket.emit(webAddPlayer);
+    }
+
   </script>
 </body>
 </html>
