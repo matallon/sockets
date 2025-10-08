@@ -5,7 +5,7 @@
   <title>The Garden</title>
 </head>
 <body>
-  <button type="button" style="font-size: larger;"  onclick="socket.emit('webAddPlayer');">spawn</button>
+  <button type="button" style="font-size: larger;" onclick="socket.emit('webAddPlayer');" >spawn</button>
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io({
@@ -15,11 +15,6 @@
       ackTimeout: 10000,
       retries: 3,
     });
-
-    function buttonClicked(){
-      
-    }
-
   </script>
 </body>
 </html>
