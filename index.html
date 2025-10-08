@@ -8,13 +8,12 @@
   <button type="button" style="font-size: larger;" onclick="socket.emit('webAddPlayer');" >spawn</button>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    const socket = io({
+  const socket = io({
       auth: {
         serverOffset: 0
       },
       ackTimeout: 10000,
-      retries: 3,
-    });
+  });
   </script>
 </body>
 </html>
