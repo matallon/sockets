@@ -5,10 +5,9 @@
   <title>The Garden</title>
 </head>
 <body>
-  <button type="button" style="font-size: larger;"  onclick="buttonClicked();">spawn</button>
+  <button type="button" style="font-size: larger;"  onclick="socket.emit('webAddPlayer');">spawn</button>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    let counter = 0;
     const socket = io({
       auth: {
         serverOffset: 0
@@ -18,7 +17,7 @@
     });
 
     function buttonClicked(){
-      socket.emit('webAddPlayer');
+      
     }
 
   </script>
